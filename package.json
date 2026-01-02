@@ -1,0 +1,50 @@
+{
+  "name": "daniel-rosehill-mcps",
+  "version": "1.0.0",
+  "description": "Personal MCP installer and registry manager - quickly set up all my MCP servers on a new machine",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "daniel-rosehill-mcps": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "installer",
+    "registry",
+    "claude-code",
+    "cursor",
+    "vscode"
+  ],
+  "author": "Daniel Rosehill <public@danielrosehill.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danielrosehill/My-MCP-Installer.git"
+  },
+  "homepage": "https://github.com/danielrosehill/My-MCP-Installer#readme",
+  "bugs": {
+    "url": "https://github.com/danielrosehill/My-MCP-Installer/issues"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.25.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,210 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-01-02T12:00:00Z",
+  "mcps": [
+    {
+      "id": "gemini_transcription",
+      "name": "Gemini Transcription",
+      "description": "Audio transcription using Google Gemini multimodal API with automatic cleanup and formatting",
+      "category": "Audio & Transcription",
+      "essential": true,
+      "type": "npm",
+      "config": {
+        "package": "gemini-transcription-mcp"
+      },
+      "secrets": [
+        {
+          "key": "GOOGLE_API_KEY",
+          "description": "Google AI API key for Gemini",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "cloud_asr",
+      "name": "Cloud ASR",
+      "description": "Multi-backend cloud speech-to-text transcription (OpenRouter, Gemini, OpenAI)",
+      "category": "Audio & Transcription",
+      "essential": false,
+      "type": "npm",
+      "config": {
+        "package": "cloud-asr-mcp"
+      },
+      "secrets": [
+        {
+          "key": "OPENROUTER_API_KEY",
+          "description": "OpenRouter API key for transcription",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "metamcp",
+      "name": "MetaMCP",
+      "description": "MCP aggregator and manager via streamable HTTP endpoint",
+      "category": "MCP Management",
+      "essential": true,
+      "type": "streamable-http",
+      "config": {
+        "url": "https://mcp.example.com/metamcp/daniel-personal/mcp"
+      },
+      "secrets": [
+        {
+          "key": "METAMCP_TOKEN",
+          "description": "MetaMCP Bearer authentication token",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "my_network",
+      "name": "My Network MCP",
+      "description": "Network management and monitoring tools",
+      "category": "System & Network",
+      "essential": false,
+      "type": "npm",
+      "config": {
+        "package": "my-network-mcp"
+      },
+      "secrets": []
+    },
+    {
+      "id": "playwright",
+      "name": "Playwright MCP",
+      "description": "Browser automation and testing via Playwright",
+      "category": "Development",
+      "essential": false,
+      "type": "npm",
+      "config": {
+        "package": "@playwright/mcp",
+        "args": ["--headless"]
+      },
+      "secrets": []
+    },
+    {
+      "id": "browsermcp",
+      "name": "BrowserMCP",
+      "description": "Browser control and web interaction",
+      "category": "Development",
+      "essential": false,
+      "type": "npm",
+      "config": {
+        "package": "@browsermcp/mcp"
+      },
+      "secrets": []
+    },
+    {
+      "id": "homebox",
+      "name": "Homebox MCP",
+      "description": "Home inventory management via Homebox API",
+      "category": "Productivity",
+      "essential": false,
+      "type": "npm",
+      "config": {
+        "package": "homebox-mcp"
+      },
+      "secrets": [
+        {
+          "key": "HOMEBOX_URL",
+          "description": "Homebox server URL",
+          "required": true
+        },
+        {
+          "key": "HOMEBOX_API_KEY",
+          "description": "Homebox API key",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "wasabi_s3",
+      "name": "Wasabi S3 MCP",
+      "description": "Wasabi S3 object storage operations",
+      "category": "Storage",
+      "essential": false,
+      "type": "npm",
+      "config": {
+        "package": "wasabi-s3-mcp"
+      },
+      "secrets": [
+        {
+          "key": "WASABI_ACCESS_KEY",
+          "description": "Wasabi access key ID",
+          "required": true
+        },
+        {
+          "key": "WASABI_SECRET_KEY",
+          "description": "Wasabi secret access key",
+          "required": true
+        },
+        {
+          "key": "WASABI_REGION",
+          "description": "Wasabi region (e.g., us-east-1)",
+          "required": false,
+          "default": "us-east-1"
+        }
+      ]
+    },
+    {
+      "id": "save_to_nas",
+      "name": "Save to NAS MCP",
+      "description": "File operations for NAS storage",
+      "category": "Storage",
+      "essential": false,
+      "type": "npm",
+      "config": {
+        "package": "save-to-nas-mcp"
+      },
+      "secrets": [
+        {
+          "key": "NAS_PATH",
+          "description": "NAS mount path or network path",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "github_mcp",
+      "name": "GitHub MCP (Docker)",
+      "description": "Official GitHub MCP server via Docker",
+      "category": "Development",
+      "essential": false,
+      "type": "docker",
+      "config": {
+        "image": "ghcr.io/github/github-mcp-server",
+        "args": ["-i", "--rm"]
+      },
+      "secrets": [
+        {
+          "key": "GITHUB_PERSONAL_ACCESS_TOKEN",
+          "description": "GitHub Personal Access Token with repo access",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "slack",
+      "name": "Slack MCP",
+      "description": "Slack integration via SSE",
+      "category": "Communication",
+      "essential": false,
+      "type": "sse",
+      "config": {
+        "url": "https://mcp.slack.com/sse"
+      },
+      "secrets": []
+    },
+    {
+      "id": "asana",
+      "name": "Asana MCP",
+      "description": "Asana project management integration via SSE",
+      "category": "Productivity",
+      "essential": false,
+      "type": "sse",
+      "config": {
+        "url": "https://mcp.asana.com/sse"
+      },
+      "secrets": []
+    }
+  ]
+}

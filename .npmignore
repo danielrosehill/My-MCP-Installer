@@ -1,0 +1,6 @@
+src/
+registry/
+tsconfig.json
+.gitignore
+.env
+*.log
